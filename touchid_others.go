@@ -2,18 +2,20 @@
 
 package touchid
 
-func Authenticate(reason string) (bool, error) {
+import "errors"
+
+func Authenticate(_ string) (bool, error) {
 	return false, errors.New("touch id auth not support")
 }
 
-func AuthenticateWithBiometrics(reason string) (bool, error) {
+func AuthenticateWithBiometrics(_ string) (bool, error) {
 	return false, errors.New("touch id auth not support")
 }
 
-func AuthenticateWithWatch(reason string) (bool, error) {
+func AuthenticateWithWatch(_ string) (bool, error) {
 	return false, errors.New("touch id auth not support")
 }
 
-func AuthenticateWithBiometricsOrWatch(reason string) (bool, error) {
+func AuthenticateWithBiometricsOrWatch(_ string) (bool, error) {
 	return false, errors.New("touch id auth not support")
 }
