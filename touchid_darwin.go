@@ -32,7 +32,7 @@ int Authenticate(int lap, char const* reason) {
   laPolicy = LAPolicyDeviceOwnerAuthenticationWithBiometricsOrWatch;
   break;
  default:
-  laPolicy = LAPolicyDeviceOwnerAuthenticationWithWatch;
+  laPolicy = LAPolicyDeviceOwnerAuthentication;
   break;
  }
 
