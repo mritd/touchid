@@ -16,18 +16,18 @@ int Authenticate(int lap, char const* reason) {
  __block int result = 0;
  LAPolicy laPolicy;
  switch (lap){
- case 0:
-  laPolicy = LAPolicyDeviceOwnerAuthentication;
-  break;
  case 1:
-  laContext.localizedFallbackTitle = @"";
-  laPolicy = LAPolicyDeviceOwnerAuthenticationWithWatch;
+  laPolicy = LAPolicyDeviceOwnerAuthentication;
   break;
  case 2:
   laContext.localizedFallbackTitle = @"";
-  laPolicy = LAPolicyDeviceOwnerAuthenticationWithBiometrics;
+  laPolicy = LAPolicyDeviceOwnerAuthenticationWithWatch;
   break;
  case 3:
+  laContext.localizedFallbackTitle = @"";
+  laPolicy = LAPolicyDeviceOwnerAuthenticationWithBiometrics;
+  break;
+ case 4:
   laContext.localizedFallbackTitle = @"";
   laPolicy = LAPolicyDeviceOwnerAuthenticationWithBiometricsOrWatch;
   break;

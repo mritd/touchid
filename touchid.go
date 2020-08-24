@@ -14,13 +14,13 @@ const (
 func Auth(dType DeviceType, reason string) (bool, error) {
 	switch dType {
 	case DeviceTypeAny:
-		return Authenticate(0, reason)
-	case DeviceTypeWatch:
 		return Authenticate(1, reason)
-	case DeviceTypeBiometrics:
+	case DeviceTypeWatch:
 		return Authenticate(2, reason)
-	case DeviceTypeBiometricsOrWatch:
+	case DeviceTypeBiometrics:
 		return Authenticate(3, reason)
+	case DeviceTypeBiometricsOrWatch:
+		return Authenticate(4, reason)
 	default:
 		return false, errors.New("invalid device type")
 	}
