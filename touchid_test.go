@@ -1,6 +1,10 @@
 package touchid
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+	"time"
+)
 
 func TestAuthenticate(t *testing.T) {
 	ok, err := Auth(DeviceTypeAny, "Test touch id.")
@@ -32,4 +36,10 @@ func TestAuthenticateWithBiometricsOrWatch(t *testing.T) {
 		t.Fatal(err)
 	}
 	t.Log("touch id authentication result:", ok)
+}
+
+func TestSerialAuth(t *testing.T) {
+	for i := 0; i < 10; i++ {
+		go fmt.Println(SerialAuth(DeviceTypeAny, "Test SerialAuth.", 3*time.Second))
+	}
 }
